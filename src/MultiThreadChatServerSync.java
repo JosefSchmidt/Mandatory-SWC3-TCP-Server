@@ -5,6 +5,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Timer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -73,7 +74,7 @@ public class MultiThreadChatServerSync {
                     clientSocket.close();
                 }
             } catch (IOException e) {
-                System.out.println(e);
+                System.out.println("The disconnected");
             }
         }
     }
@@ -100,6 +101,7 @@ class ClientThread extends Thread {
     private List userList;
 
 
+
     // A ClientThread constructor
     public ClientThread(Socket clientSocket, ClientThread[] threads, List userList) {
         this.clientSocket = clientSocket;
@@ -107,6 +109,8 @@ class ClientThread extends Thread {
         this.userList = userList;
         maxClientsCount = threads.length;
     }
+
+
 
     public void run() {
         // assigns the number of clients connected to the server
@@ -148,13 +152,16 @@ class ClientThread extends Thread {
             /* Welcome the new the client. */
             os.println("Welcome " + name + " to our chat room.\nTo leave enter \"QUIT\"" + " in a new line.");
 
+            // Only one thread client can be created at a time - this allows everyone to always get a message with all the new clients.
             synchronized (this) {
+                // Adds the name to the new thread client
                 for (int i = 0; i < maxClientsCount; i++) {
                     if (threads[i] != null && threads[i] == this) {
                         clientName = name;
                         break;
                     }
                 }
+                // Sends a message to all other than the new thread client
                 for (int i = 0; i < maxClientsCount; i++) {
                     if (threads[i] != null && threads[i] != this) {
                         threads[i].os.println("*** A new user " + name
@@ -163,9 +170,10 @@ class ClientThread extends Thread {
                 }
             }
 
+            // make sure that the getInputStream receives anything (This way the sis.nextLine() won't crash.
+            while(sis.hasNextLine() ){
 
-
-            while(true){
+                //Gets a message from the client
                 String line = sis.nextLine();
                 if(line.startsWith("QUIT")){
                     deleteFromList(name);
@@ -177,13 +185,14 @@ class ClientThread extends Thread {
                     synchronized (this) {
                         for (int i = 0; i < maxClientsCount; i++) {
                             if (threads[i] != null && threads[i].clientName != null) {
-                                threads[i].os.println("<" + name + "> " + line);
+                                threads[i].os.println(name + ": " + line);
                             }
                         }
                     }
                 }
 
             }
+
             synchronized (this) {
                 for (int i = 0; i < maxClientsCount; i++) {
                     if (threads[i] != null && threads[i] != this
@@ -214,7 +223,7 @@ class ClientThread extends Thread {
             clientSocket.close();
 
         }catch (IOException e) {
-        e.printStackTrace();
+            e.printStackTrace();
         }
 
     }
@@ -248,5 +257,6 @@ class ClientThread extends Thread {
     private void deleteFromList(String name){
         userList.remove(name);
     }
+
 }
 
