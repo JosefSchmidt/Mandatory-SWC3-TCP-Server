@@ -51,12 +51,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="808" />
+          <entry key="java" value="1018" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="808" />
+          <entry key="JAVA" value="1018" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -89,12 +89,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MultiThreadChatServerSync.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1916">
-              <caret line="170" column="13" lean-forward="true" selection-start-line="170" selection-start-column="13" selection-end-line="170" selection-end-column="13" />
+            <state relative-caret-position="476">
+              <caret line="192" column="13" lean-forward="true" selection-start-line="192" selection-start-column="13" selection-end-line="192" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#9369#9370#0" expanded="true" />
-                <element signature="e#9406#9407#0" expanded="true" />
+                <element signature="e#799#807#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -179,7 +178,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538173468371" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538175439179" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -244,12 +243,12 @@
       <updated>1538118303930</updated>
       <workItem from="1538118307298" duration="8493000" />
       <workItem from="1538145612498" duration="11280000" />
-      <workItem from="1538159848612" duration="5494000" />
+      <workItem from="1538159848612" duration="6857000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25267000" />
+    <option name="totallyTimeSpent" value="26630000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1294" height="1407" extended-state="0" />
@@ -292,24 +291,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MultiThreadChatServerSync.java</url>
-          <line>187</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MultiThreadChatServerSync.java</url>
-          <line>155</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/ClientThread.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.java">
@@ -338,12 +319,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MultiThreadChatServerSync.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1916">
-          <caret line="170" column="13" lean-forward="true" selection-start-line="170" selection-start-column="13" selection-end-line="170" selection-end-column="13" />
+        <state relative-caret-position="476">
+          <caret line="192" column="13" lean-forward="true" selection-start-line="192" selection-start-column="13" selection-end-line="192" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9369#9370#0" expanded="true" />
-            <element signature="e#9406#9407#0" expanded="true" />
+            <element signature="e#799#807#0" expanded="true" />
           </folding>
         </state>
       </provider>

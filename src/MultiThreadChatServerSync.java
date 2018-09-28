@@ -5,7 +5,6 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.Timer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,7 +20,7 @@ public class MultiThreadChatServerSync {
     // The server creates a new thread when a client enters the chatroom.
     private static final ClientThread[] threads = new ClientThread[maxClientsCount];
 
-    private static final List userList = new ArrayList();
+    private static final List<String> userList = new ArrayList<String>();
 
     public static void main(String[] args){
 
@@ -56,7 +55,7 @@ public class MultiThreadChatServerSync {
                 clientSocket = serverSocket.accept();
 
                 // Find a place for new user
-                int i = 10;
+                int i = 0;
                 for (i = 0; i < maxClientsCount; i++) {
                     // If no one is using the thread[i] assign a new clientSocket and thread to the Thread (Construction) and brake the loop.
                     if (threads[i] == null) {
@@ -92,18 +91,18 @@ class ClientThread extends Thread {
     // PrintStream (Allows client to sent messenges to other clients through the server
     private PrintStream os      = null;
     // The clients socket details
-    private Socket clientSocket = null;
+    private Socket clientSocket;
     // A reference to the ClienThread[] (which is located in the MultiThreadChatServerSynd class)
     private final ClientThread[] threads;
     // The max number of clients that can connect to the server
     private int maxClientsCount;
     // List that holds all the connected names
-    private List userList;
+    private List<String> userList;
 
 
 
     // A ClientThread constructor
-    public ClientThread(Socket clientSocket, ClientThread[] threads, List userList) {
+    ClientThread(Socket clientSocket, ClientThread[] threads, List<String> userList) {
         this.clientSocket = clientSocket;
         this.threads = threads;
         this.userList = userList;
@@ -193,10 +192,10 @@ class ClientThread extends Thread {
 
             }
 
+            // Sends a message out to all clients except the client that's leaving, that the client is leaving.
             synchronized (this) {
                 for (int i = 0; i < maxClientsCount; i++) {
-                    if (threads[i] != null && threads[i] != this
-                            && threads[i].clientName != null) {
+                    if (threads[i] != null && threads[i] != this && threads[i].clientName != null) {
                         threads[i].os.println("*** The user " + name
                                 + " is leaving the chat room !!! ***");
                     }
@@ -228,10 +227,10 @@ class ClientThread extends Thread {
 
     }
 
-    private boolean loopThreads(String name, List userList){
+    private boolean loopThreads(String name, List<String> userList){
         // Checks if the username has been used by someone else
-        for(int i = 0; i < userList.size(); i++){
-            if(userList.get(i).equals(name)){
+        for (Object anUserList : userList) {
+            if (anUserList.equals(name)) {
                 return false;
             }
         }
@@ -254,7 +253,9 @@ class ClientThread extends Thread {
         return true;
     }
 
+
     private void deleteFromList(String name){
+        // Updates the List of clients by deleting.
         userList.remove(name);
     }
 
