@@ -9,6 +9,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Mandatory_SWC3_TCP_Server$MultiThreadChatServerSync.ic" NAME="MultiThreadChatServerSync Coverage Results" MODIFIED="1538223206710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="392287051">
       <usages-collector id="statistics.lifecycle.project">
@@ -51,12 +54,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1018" />
+          <entry key="java" value="1535" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1018" />
+          <entry key="JAVA" value="1535" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -89,11 +92,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MultiThreadChatServerSync.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="192" column="13" lean-forward="true" selection-start-line="192" selection-start-column="13" selection-end-line="192" selection-end-column="13" />
+            <state relative-caret-position="-1973">
+              <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#799#807#0" expanded="true" />
+                <element signature="method#loopThreads#0;class#ClientThread#0" />
+                <element signature="method#correctUsername#0;class#ClientThread#0" />
+                <element signature="method#deleteFromList#0;class#ClientThread#0" />
               </folding>
             </state>
           </provider>
@@ -143,8 +149,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1273" />
     <option name="width" value="1294" />
     <option name="height" value="1407" />
   </component>
@@ -178,7 +184,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538175439179" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538232428315" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -193,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MultiThreadChatServerSync">
+  <component name="RunManager" selected="Application.MultiThreadChatClient">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Mandatory-SWC3-TCP-ChatServer" />
@@ -225,8 +231,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MultiThreadChatServerSync" />
         <item itemvalue="Application.MultiThreadChatClient" />
+        <item itemvalue="Application.MultiThreadChatServerSync" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -243,18 +249,18 @@
       <updated>1538118303930</updated>
       <workItem from="1538118307298" duration="8493000" />
       <workItem from="1538145612498" duration="11280000" />
-      <workItem from="1538159848612" duration="6857000" />
+      <workItem from="1538159848612" duration="13850000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26630000" />
+    <option name="totallyTimeSpent" value="33623000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1294" height="1407" extended-state="0" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13452189" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.065977745" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -264,8 +270,8 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33150038" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5074627" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32917318" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5070203" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -274,6 +280,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3299293" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3292683" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.3298887" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -293,13 +300,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/ClientThread.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/Scanner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
@@ -317,13 +317,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MultiThreadChatServerSync.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="192" column="13" lean-forward="true" selection-start-line="192" selection-start-column="13" selection-end-line="192" selection-end-column="13" />
+        <state relative-caret-position="-1973">
+          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#799#807#0" expanded="true" />
+            <element signature="method#loopThreads#0;class#ClientThread#0" />
+            <element signature="method#correctUsername#0;class#ClientThread#0" />
+            <element signature="method#deleteFromList#0;class#ClientThread#0" />
           </folding>
         </state>
       </provider>

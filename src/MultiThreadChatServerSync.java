@@ -2,9 +2,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,6 +19,7 @@ public class MultiThreadChatServerSync {
     private static final ClientThread[] threads = new ClientThread[maxClientsCount];
 
     private static final List<String> userList = new ArrayList<String>();
+
 
     public static void main(String[] args){
 
@@ -101,12 +100,15 @@ class ClientThread extends Thread {
 
 
 
+
+
     // A ClientThread constructor
     ClientThread(Socket clientSocket, ClientThread[] threads, List<String> userList) {
         this.clientSocket = clientSocket;
         this.threads = threads;
         this.userList = userList;
         maxClientsCount = threads.length;
+
     }
 
 
@@ -151,6 +153,7 @@ class ClientThread extends Thread {
             /* Welcome the new the client. */
             os.println("Welcome " + name + " to our chat room.\nTo leave enter \"QUIT\"" + " in a new line.");
 
+
             // Only one thread client can be created at a time - this allows everyone to always get a message with all the new clients.
             synchronized (this) {
                 // Adds the name to the new thread client
@@ -169,11 +172,15 @@ class ClientThread extends Thread {
                 }
             }
 
+
             // make sure that the getInputStream receives anything (This way the sis.nextLine() won't crash.
             while(sis.hasNextLine() ){
 
+
                 //Gets a message from the client
                 String line = sis.nextLine();
+
+
                 if(line.startsWith("QUIT")){
                     deleteFromList(name);
                     break;
@@ -258,6 +265,8 @@ class ClientThread extends Thread {
         // Updates the List of clients by deleting.
         userList.remove(name);
     }
+
+
 
 }
 
