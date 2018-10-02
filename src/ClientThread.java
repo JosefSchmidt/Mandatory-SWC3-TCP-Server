@@ -96,52 +96,50 @@ class ClientThread extends Thread {
             }
 
             // make sure that the getInputStream receives anything (This way the sis.nextLine() won't crash.
-            while(sis.hasNextLine()){
+            while(sis.hasNextLine()) {
 
 
                 //Gets a message from the client
                 String line = sis.nextLine();
 
+                if (line.length() < 250) {
 
-                if(line.startsWith("QUIT")){
-                    deleteFromList(name);
-                    break;
-                }
+                    if (line.startsWith("QUIT")) {
+                        deleteFromList(name);
+                        break;
 
-                else if(line.startsWith("IMAV")){
+                    } else if (line.startsWith("IMAV")) {
 
-                    synchronized (this) {
-                        for (int i = 0; i < maxClientsCount; i++) {
-                            if (threads[i] != null && threads[i] == this) {
-                                threads[i].setClientTime(TimeTCP.setTime());
-                                threads[i].os.println("HeartBeat has been called. You have been given 60 seconds");
+                        synchronized (this) {
+                            for (int i = 0; i < maxClientsCount; i++) {
+                                if (threads[i] != null && threads[i] == this) {
+                                    threads[i].setClientTime(TimeTCP.setTime());
+                                    threads[i].os.println("HeartBeat has been called. You have been given 60 seconds");
+                                }
+                            }
+                        }
+                    } else if (line.startsWith("LIST")) {
+                        synchronized (this) {
+                            for (int i = 0; i < maxClientsCount; i++) {
+                                if (threads[i] != null && threads[i].clientName != null) {
+                                    threads[i].os.println(viewList());
+                                }
+                            }
+                        }
+
+                    } else {
+                        // The message is public, broadcast it to all other clients.
+                        synchronized (this) {
+                            for (int i = 0; i < maxClientsCount; i++) {
+                                if (threads[i] != null && threads[i].clientName != null) {
+                                    threads[i].os.println(name + ": " + line);
+                                }
                             }
                         }
                     }
-                }
-
-                else if(line.startsWith("LIST")){
-                    synchronized (this) {
-                        for (int i = 0; i < maxClientsCount; i++) {
-                            if (threads[i] != null && threads[i].clientName != null) {
-                                threads[i].os.println(viewList());
-                            }
-                        }
-                    }
-
 
                 }
-
-                else {
-                    // The message is public, broadcast it to all other clients.
-                    synchronized (this) {
-                        for (int i = 0; i < maxClientsCount; i++) {
-                            if (threads[i] != null && threads[i].clientName != null) {
-                                threads[i].os.println(name + ": " + line);
-                            }
-                        }
-                    }
-                }
+                else os.println("Message too long. Max 250 characters is allowed");
 
             }
 
@@ -196,7 +194,7 @@ class ClientThread extends Thread {
 
     private boolean correctUsername(String name) {
         // Only allow certain ASCII characters
-        String regex = "^[a-zA-Z0-9-]+$+";
+        String regex = "^[a-zA-Z0-9-_]+$+";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(name);
 

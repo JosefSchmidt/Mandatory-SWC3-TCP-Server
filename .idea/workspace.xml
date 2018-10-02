@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd87952f-da6b-44b6-9dfa-d7ae940b00e2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Main.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mandatory-SWC3-TCP-ChatServer/Main.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/ClientThread.java" afterPath="$PROJECT_DIR$/src/ClientThread.java" />
+      <change beforePath="$PROJECT_DIR$/src/MultiThreadChatClient.java" afterPath="$PROJECT_DIR$/src/MultiThreadChatClient.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,11 +85,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MultiThreadChatServerSync.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MultiThreadChatServerSync.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MultiThreadChatServerSync.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-476">
-              <caret line="10" column="46" lean-forward="true" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+            <state relative-caret-position="615">
+              <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,12 +97,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MultiThreadChatClient.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MultiThreadChatClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MultiThreadChatClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-178">
-              <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-              <folding />
+            <state relative-caret-position="154">
+              <caret line="57" column="60" lean-forward="true" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,13 +112,23 @@
       <file leaf-file-name="ClientThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3060">
-              <caret line="215" column="59" lean-forward="true" selection-start-line="215" selection-start-column="59" selection-end-line="215" selection-end-column="59" />
+            <state relative-caret-position="2775">
+              <caret line="196" column="43" lean-forward="true" selection-start-line="196" selection-start-column="43" selection-end-line="196" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#loopThreads#0;class#ClientThread#0" expanded="false" />
                 <element signature="method#generalInformation#0;class#ClientThread#0" expanded="false" />
                 <element signature="method#deleteFromList#0;class#ClientThread#0" expanded="false" />
+                <element signature="e#8626#8627#0" expanded="true" />
+                <element signature="e#8661#8662#0" expanded="true" />
+                <element signature="e#8698#8699#0" expanded="true" />
+                <element signature="e#8731#8732#0" expanded="true" />
+                <element signature="e#8784#8785#0" expanded="true" />
+                <element signature="e#8828#8829#0" expanded="true" />
+                <element signature="e#8862#8863#0" expanded="true" />
+                <element signature="e#8887#8888#0" expanded="true" />
+                <element signature="e#8924#8925#0" expanded="true" />
+                <element signature="e#8957#8958#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,10 +188,10 @@
         <option value="$PROJECT_DIR$/src/Time.java" />
         <option value="$PROJECT_DIR$/src/TimeTCP.java" />
         <option value="$PROJECT_DIR$/src/MultiThreadChatClient2.java" />
-        <option value="$PROJECT_DIR$/src/MultiThreadChatClient.java" />
         <option value="$PROJECT_DIR$/src/MultiThreadChatServerSync.java" />
-        <option value="$PROJECT_DIR$/src/ClientThread.java" />
         <option value="$PROJECT_DIR$/src/HeartBeat.java" />
+        <option value="$PROJECT_DIR$/src/ClientThread.java" />
+        <option value="$PROJECT_DIR$/src/MultiThreadChatClient.java" />
       </list>
     </option>
   </component>
@@ -363,15 +377,16 @@
       <workItem from="1538159848612" duration="13850000" />
       <workItem from="1538320455051" duration="27000" />
       <workItem from="1538390328925" duration="3422000" />
-      <workItem from="1538402705805" duration="17345000" />
+      <workItem from="1538402705805" duration="18330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58849000" />
+    <option name="totallyTimeSpent" value="59834000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="815" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -386,7 +401,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23676682" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23676682" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -450,7 +465,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="19" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -478,7 +493,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -494,7 +511,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="27" lean-forward="true" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -520,7 +539,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -540,7 +561,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -574,7 +597,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -631,37 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MultiThreadChatServerSync.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-476">
-          <caret line="10" column="46" lean-forward="true" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MultiThreadChatClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-178">
-          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3060">
-          <caret line="215" column="59" lean-forward="true" selection-start-line="215" selection-start-column="59" selection-end-line="215" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#loopThreads#0;class#ClientThread#0" expanded="false" />
-            <element signature="method#generalInformation#0;class#ClientThread#0" expanded="false" />
-            <element signature="method#deleteFromList#0;class#ClientThread#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HeartBeat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -678,6 +672,49 @@
         <state relative-caret-position="0">
           <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MultiThreadChatServerSync.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2775">
+          <caret line="196" column="43" lean-forward="true" selection-start-line="196" selection-start-column="43" selection-end-line="196" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#loopThreads#0;class#ClientThread#0" expanded="false" />
+            <element signature="method#generalInformation#0;class#ClientThread#0" expanded="false" />
+            <element signature="method#deleteFromList#0;class#ClientThread#0" expanded="false" />
+            <element signature="e#8626#8627#0" expanded="true" />
+            <element signature="e#8661#8662#0" expanded="true" />
+            <element signature="e#8698#8699#0" expanded="true" />
+            <element signature="e#8731#8732#0" expanded="true" />
+            <element signature="e#8784#8785#0" expanded="true" />
+            <element signature="e#8828#8829#0" expanded="true" />
+            <element signature="e#8862#8863#0" expanded="true" />
+            <element signature="e#8887#8888#0" expanded="true" />
+            <element signature="e#8924#8925#0" expanded="true" />
+            <element signature="e#8957#8958#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MultiThreadChatClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="57" column="60" lean-forward="true" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
