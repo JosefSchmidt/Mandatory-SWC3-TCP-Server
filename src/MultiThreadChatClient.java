@@ -17,7 +17,7 @@ public class MultiThreadChatClient implements Runnable {
     public static void main(String[] args) {
         int portNumber = 5000;     // The default port.
         //String host = "localhost"; // The default serverhost.
-        String host = "192.168.0.23"; // The default serverhost.
+        String host = "192.168.1.29"; // The default serverhost.
 
         if (args.length < 2) {
             System.out.println("Usage: java MultiThreadChatClient <host> <portNumber>\n"
