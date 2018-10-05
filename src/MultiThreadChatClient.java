@@ -13,60 +13,81 @@ public class MultiThreadChatClient implements Runnable {
     private static Scanner sis              = null;  // The input stream
     private static BufferedReader inputLine = null;  // From console
     private static boolean closed           = false; // Connection state
+    private static Scanner scanner = new Scanner(System.in); // The console input
+
+    private static int portNumber = 0;
+    private static String host;
 
     public static void main(String[] args) {
-        int portNumber = 5000;     // The default port.
-        //String host = "localhost"; // The default serverhost.
-        String host = "192.168.0.15"; // The default serverhost.
+//        portNumber = 5000;     // The default port.
+//        String host = "localhost"; // The default serverhost.
+//        host = "172.16.31.186"; // The default serverhost.
 
-        if (args.length < 2) {
-            System.out.println("Usage: java MultiThreadChatClient <host> <portNumber>\n"
-                    + "Now using host=" + host + ", portNumber=" + portNumber);
-        } else {
-            host = args[0];
-            portNumber = Integer.valueOf(args[1]).intValue();
-        }
-
-
-        /*
-         * Open a socket on a given host and port. Open input and output streams.
-         */
-        try {
-            clientSocket = new Socket(host, portNumber);
-            inputLine = new BufferedReader(new InputStreamReader(System.in));
-            os  = new PrintStream(clientSocket.getOutputStream());
-            sis = new Scanner(clientSocket.getInputStream());
+//        if (args.length < 2) {
+//            System.out.println("Usage: java MultiThreadChatClient <host> <portNumber>\n"
+//                    + "Now using host=" + host + ", portNumber=" + portNumber);
+//        } else {
+//            host = args[0];
+//            portNumber = Integer.valueOf(args[1]).intValue();
+//        }
 
 
 
-        } catch (UnknownHostException e) {
-            System.err.println("Don't know about host " + host);
-        } catch (IOException e) {
-            System.err.println("Couldn't get I/O for the connection to the host " + host);
-        }
 
-        /*
-         * If everything has been initialized then we want to write some data to the
-         * socket we have opened a connection to on the port portNumber.
-         */
-        if (clientSocket != null && os != null && sis != null) {
-            try {
-                /* Create a thread to read from the server. */
-                new Thread(new MultiThreadChatClient()).start();
+            /*
+             * Open a socket on a given host and port. Open input and output streams.
+             */
 
-                while (!closed) {
-                    os.println(inputLine.readLine().trim());
+            while (true) {
+                try {
+
+                    System.out.println("Please enter the IP in format x.x.x.x");
+                    host = scanner.nextLine();
+
+                    System.out.println("Port number to server");
+                    portNumber = scanner.nextInt();
+                    scanner.nextLine();
+
+                    clientSocket = new Socket(host, portNumber);
+                    inputLine = new BufferedReader(new InputStreamReader(System.in));
+                    os = new PrintStream(clientSocket.getOutputStream());
+                    sis = new Scanner(clientSocket.getInputStream());
+
+
+                } catch (UnknownHostException e) {
+                    System.err.println("Don't know the host " + host);
+                } catch (IOException e) {
+                    System.err.println("Couldn't get I/O for the connection to the host " + host);
                 }
-
-                os.close();
-                sis.close();
-                clientSocket.close();
-
-            } catch (IOException e) {
-                System.err.println("IOException:  " + e);
+                break;
             }
-        }
-    }
+
+
+
+                /*
+                 * If everything has been initialized then we want to write some data to the
+                 * socket we have opened a connection to on the port portNumber.
+                 */
+
+
+                if (clientSocket != null && os != null && sis != null) {
+                    try {
+                        /* Create a thread to read from the server. */
+                        new Thread(new MultiThreadChatClient()).start();
+
+                        while (!closed) {
+                            os.println(inputLine.readLine().trim());
+                        }
+
+                        os.close();
+                        sis.close();
+                        clientSocket.close();
+
+                    } catch (IOException e) {
+                        System.err.println("IOException:  " + e);
+                    }
+                }
+            }
 
     /*
      * Create a thread to read from the server.
@@ -80,8 +101,6 @@ public class MultiThreadChatClient implements Runnable {
         String responseLine;
         while ((responseLine = sis.nextLine()) != null) {
             System.out.println(responseLine);
-            if (responseLine.indexOf("*** Bye") != -1)
-                break;
         }
         closed = true;
     }

@@ -18,11 +18,9 @@ class ClientThread extends Thread {
     private Socket clientSocket;
     private ClientThread[] threads;
     private int maxClientsCount;
+
     private List<String> userList;
     private double clientTime;
-
-
-
 
 
     // A ClientThread constructor
@@ -52,29 +50,38 @@ class ClientThread extends Thread {
             /*
              * Get users name (If a names i taken. It is not possible to get that user name).
              */
+
+            os.println("There has been established a connection to the server");
+
             String name;
             while (true) {
-                os.println("Enter your name.");
-                name = sis.nextLine().trim();
 
-                // Checks username
-                if(correctUsername(name)) {
-                    //See's if username has been used before
-                    if (loopThreads(name, userList)) {
-                        break;
+                name = sis.nextLine();
+
+                if(name.startsWith("JOIN")) {
+
+                    name = name.substring(4, name.length());
+
+                    name = name.trim();
+
+                    // Checks username
+                    if (correctUsername(name)) {
+                        //See's if username has been used before
+                        if (loopThreads(name, userList)) {
+                            break;
+                        } else {
+                            os.println("J_ER: The name is taken");
+                        }
                     }
-                    else {
-                        os.println("The name is taken");
+                    // prints incorrect typed username
+                    if (!correctUsername(name)) {
+                        os.println(StringColor.ANSI_RED+ "J_ER" + StringColor.ANSI_WHITE + ": Username needs to be max 12 characters long, only letters, digits, ‘-‘ and ‘_’ allowed");
                     }
-                }
-                // prints incorrect typed username
-                if(!correctUsername(name)) {
-                    os.println("Username needs to be max 12 characters long, only letters, digits, ‘-‘ and ‘_’ allowed");
-                }
+                } else os.println(StringColor.ANSI_RED + "J_ER" + StringColor.ANSI_WHITE + ": Wrong protocol.\nPlease enter \"JOIN\" \nfollowed by a username to enter the chatroom\n");
             }
 
             /* Welcome the new the client. */
-            os.println("Welcome " + name + " to our chat room.\n" + generalInformation());
+            os.println(StringColor.ANSI_GREEN +"\nJ_OK"+ StringColor.ANSI_WHITE + ": Welcome " + name + " to our chat room.");
 
 
             // Only one thread client can be created at a time - this allows everyone to always get a message with all the new clients.
@@ -93,18 +100,33 @@ class ClientThread extends Thread {
                                 + " entered the chat room !!! ***");
                     }
                 }
-            }
+                for (int i = 0; i < maxClientsCount; i++) {
+                        if (threads[i] != null && threads[i].clientName != null) {
+                            threads[i].os.println(viewList());
+                        }
+                    }
+                }
 
             // make sure that the getInputStream receives anything (This way the sis.nextLine() won't crash.
             while(sis.hasNextLine()) {
 
-
                 //Gets a message from the client
                 String line = sis.nextLine();
 
-                if (line.length() < 250) {
+                    if(line.startsWith("DATA") && line.length() > 4) {
+                        if(line.length() < 250) {
 
-                    if (line.startsWith("QUIT")) {
+                            line = line.substring(5, line.length());
+                            synchronized (this) {
+                                for (int i = 0; i < maxClientsCount; i++) {
+                                    if (threads[i] != null && threads[i].clientName != null) {
+                                        threads[i].os.println("\n" + name + ": " + StringColor.ANSI_PURPLE + line + StringColor.ANSI_WHITE);
+                                    }
+                                }
+                            }
+                        } else os.println("Message too long. Max 250 characters is allowed");
+
+                    } else if (line.startsWith("QUIT")) {
                         deleteFromList(name);
                         break;
 
@@ -118,39 +140,28 @@ class ClientThread extends Thread {
                                 }
                             }
                         }
-                    } else if (line.startsWith("LIST")) {
-                        synchronized (this) {
-                            for (int i = 0; i < maxClientsCount; i++) {
-                                if (threads[i] != null && threads[i].clientName != null) {
-                                    threads[i].os.println(viewList());
-                                }
-                            }
-                        }
 
                     } else {
-                        // The message is public, broadcast it to all other clients.
-                        synchronized (this) {
-                            for (int i = 0; i < maxClientsCount; i++) {
-                                if (threads[i] != null && threads[i].clientName != null) {
-                                    threads[i].os.println(name + ": " + line);
-                                }
-                            }
-                        }
+                        os.println("The server doesn't know the protocol. Please type a known protocol\n");
                     }
-
                 }
-                else os.println("Message too long. Max 250 characters is allowed");
 
-            }
 
             // Sends a message out to all clients except the client that's leaving, that the client is leaving.
             synchronized (this) {
                 for (int i = 0; i < maxClientsCount; i++) {
                     if (threads[i] != null && threads[i] != this && threads[i].clientName != null) {
-                        threads[i].os.println("*** The user " + name
-                                + " is leaving the chat room !!! ***");
+                        threads[i].os.println(StringColor.ANSI_YELLOW + "*** The user " + name
+                                + " has left the chat room !!! ***" + StringColor.ANSI_WHITE);
                     }
                 }
+
+                for (int i = 0; i < maxClientsCount; i++) {
+                    if (threads[i] != null && threads[i].clientName != null) {
+                        threads[i].os.println(viewList());
+                    }
+                }
+
             }
 
             os.println("*** Bye " + name + " ***");
@@ -194,7 +205,7 @@ class ClientThread extends Thread {
 
     private boolean correctUsername(String name) {
         // Only allow certain ASCII characters
-        String regex = "^[a-zA-Z0-9-_]+$+";
+        String regex = "^[a-zA-Z0-9-_æøå]+$+";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(name);
 
@@ -215,25 +226,9 @@ class ClientThread extends Thread {
             }
         }
 
-        list = "Clients in the server: \n" + list;
+        list = "\nThe Clients in the server: \n" + StringColor.ANSI_BLUE + list + StringColor.ANSI_WHITE;
 
         return list;
-    }
-
-    private String generalInformation(){
-
-        String description = "";
-
-        description =  description + "As default you have 60 seconds in the chat room.\n" +
-                "If you wish to extend your time, type \"IMAV\". This will extend your\n" +
-                "time by 60 seconds\n\n" +
-                "These are the options you can choose from: \n" +
-                "QUIT - allows to leave the chat room\n" +
-                "LIST - shows a list of all the clients currently in the chat room \n" +
-                "To send a message, simply type your message and press enter";
-
-        return description;
-
     }
 
     public void deleteFromList(String name){
@@ -260,5 +255,6 @@ class ClientThread extends Thread {
     public String getClientName() {
         return clientName;
     }
+
 
 }

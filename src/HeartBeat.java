@@ -25,6 +25,9 @@ public class HeartBeat extends Thread {
                         threads[i].deleteFromList(threads[i].getClientName());
                         threads[i].getOs().println("TCP-connection has been terminated. Session has expired");
                         threads[i].getClientSocket().close();
+
+
+
                         threads[i] = null;
 
                     } catch (IOException e) {
