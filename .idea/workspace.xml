@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd87952f-da6b-44b6-9dfa-d7ae940b00e2" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/StringColor.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mandatory-SWC3-TCP-ChatServer/ClientThread.class" afterPath="$PROJECT_DIR$/out/production/Mandatory-SWC3-TCP-ChatServer/ClientThread.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mandatory-SWC3-TCP-ChatServer/HeartBeat.class" afterPath="$PROJECT_DIR$/out/production/Mandatory-SWC3-TCP-ChatServer/HeartBeat.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mandatory-SWC3-TCP-ChatServer/MultiThreadChatClient.class" afterPath="$PROJECT_DIR$/out/production/Mandatory-SWC3-TCP-ChatServer/MultiThreadChatClient.class" />
       <change beforePath="$PROJECT_DIR$/src/ClientThread.java" afterPath="$PROJECT_DIR$/src/ClientThread.java" />
-      <change beforePath="$PROJECT_DIR$/src/HeartBeat.java" afterPath="$PROJECT_DIR$/src/HeartBeat.java" />
-      <change beforePath="$PROJECT_DIR$/src/MultiThreadChatClient.java" afterPath="$PROJECT_DIR$/src/MultiThreadChatClient.java" />
+      <change beforePath="$PROJECT_DIR$/src/MultiThreadChatServerSync.java" afterPath="$PROJECT_DIR$/src/MultiThreadChatServerSync.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -93,8 +87,8 @@
       <file leaf-file-name="MultiThreadChatServerSync.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MultiThreadChatServerSync.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="11" lean-forward="true" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+            <state relative-caret-position="855">
+              <caret line="57" column="55" lean-forward="true" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MultiThreadChatClient.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MultiThreadChatClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MultiThreadChatClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state relative-caret-position="-838">
+              <caret line="10" column="70" lean-forward="false" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,11 +111,10 @@
       <file leaf-file-name="ClientThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1095">
-              <caret line="79" column="64" lean-forward="false" selection-start-line="79" selection-start-column="64" selection-end-line="79" selection-end-column="64" />
+            <state relative-caret-position="495">
+              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#ClientThread#0;class#ClientThread#0" expanded="false" />
                 <element signature="method#loopThreads#0;class#ClientThread#0" expanded="false" />
                 <element signature="method#correctUsername#0;class#ClientThread#0" expanded="false" />
                 <element signature="method#viewList#0;class#ClientThread#0" expanded="false" />
@@ -141,7 +134,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HeartBeat.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HeartBeat.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/HeartBeat.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
@@ -157,8 +150,8 @@
       <file leaf-file-name="TimeTCP.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TimeTCP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="270">
+              <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -195,10 +188,10 @@
         <option value="$PROJECT_DIR$/src/Time.java" />
         <option value="$PROJECT_DIR$/src/TimeTCP.java" />
         <option value="$PROJECT_DIR$/src/MultiThreadChatClient2.java" />
-        <option value="$PROJECT_DIR$/src/MultiThreadChatServerSync.java" />
         <option value="$PROJECT_DIR$/src/HeartBeat.java" />
         <option value="$PROJECT_DIR$/src/StringColor.java" />
         <option value="$PROJECT_DIR$/src/MultiThreadChatClient.java" />
+        <option value="$PROJECT_DIR$/src/MultiThreadChatServerSync.java" />
         <option value="$PROJECT_DIR$/src/ClientThread.java" />
       </list>
     </option>
@@ -353,12 +346,12 @@
       <workItem from="1538320455051" duration="27000" />
       <workItem from="1538390328925" duration="3422000" />
       <workItem from="1538402705805" duration="19384000" />
-      <workItem from="1538647966621" duration="10983000" />
+      <workItem from="1538647966621" duration="14973000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71871000" />
+    <option name="totallyTimeSpent" value="75861000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -381,7 +374,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3004292" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48497853" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882273" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882273" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -418,7 +411,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="39" />
+      <option name="time" value="40" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -470,7 +463,6 @@
           <caret line="196" column="43" lean-forward="true" selection-start-line="196" selection-start-column="43" selection-end-line="196" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ClientThread#0;class#ClientThread#0" expanded="false" />
             <element signature="method#loopThreads#0;class#ClientThread#0" expanded="false" />
             <element signature="method#correctUsername#0;class#ClientThread#0" expanded="false" />
             <element signature="method#viewList#0;class#ClientThread#0" expanded="false" />
@@ -620,12 +612,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TimeTCP.java">
+    <entry file="file://$PROJECT_DIR$/src/MultiThreadChatServerSync.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="855">
+          <caret line="57" column="55" lean-forward="true" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TimeTCP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MultiThreadChatClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-838">
+          <caret line="10" column="70" lean-forward="false" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#loopThreads#0;class#ClientThread#0" expanded="false" />
+            <element signature="method#correctUsername#0;class#ClientThread#0" expanded="false" />
+            <element signature="method#viewList#0;class#ClientThread#0" expanded="false" />
+            <element signature="method#deleteFromList#0;class#ClientThread#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -645,41 +671,6 @@
           <folding>
             <element signature="e#249#250#0" expanded="true" />
             <element signature="e#287#288#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="79" column="64" lean-forward="false" selection-start-line="79" selection-start-column="64" selection-end-line="79" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#ClientThread#0;class#ClientThread#0" expanded="false" />
-            <element signature="method#loopThreads#0;class#ClientThread#0" expanded="false" />
-            <element signature="method#correctUsername#0;class#ClientThread#0" expanded="false" />
-            <element signature="method#viewList#0;class#ClientThread#0" expanded="false" />
-            <element signature="method#deleteFromList#0;class#ClientThread#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MultiThreadChatServerSync.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="11" lean-forward="true" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MultiThreadChatClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

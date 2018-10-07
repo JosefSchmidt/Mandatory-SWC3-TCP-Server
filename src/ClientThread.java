@@ -10,11 +10,11 @@ class ClientThread extends Thread {
 
 
     private String clientName   = null;
+    // Scanner for input
     private Scanner sis  = null;
-
     // PrintStream (Allows client to sent messenges to other clients through the server
-    private PrintStream os      = null;
-
+    private PrintStream os = null;
+    // Ip and portNumber
     private Socket clientSocket;
     private ClientThread[] threads;
     private int maxClientsCount;
@@ -31,8 +31,6 @@ class ClientThread extends Thread {
         maxClientsCount = threads.length;
         this.clientTime = clientTime;
     }
-
-
 
     public void run() {
         // assigns the number of clients connected to the server

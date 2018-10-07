@@ -50,6 +50,7 @@ public class MultiThreadChatServerSync {
         while (true) {
             try {
 
+
                 clientSocket = serverSocket.accept();
 
                 int i = 0;
