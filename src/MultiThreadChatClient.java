@@ -112,11 +112,11 @@ public class MultiThreadChatClient implements Runnable {
             } else if(responseLine.startsWith("IMAV") && responseLine.length() > 4){
                     responseLine = responseLine.substring(5, responseLine.length());
                 System.out.println(responseLine);
-            } else if(responseLine.startsWith("J_ER") && responseLine.length() > 5){
-                    responseLine = responseLine.substring(6, responseLine.length());
+            } else if(responseLine.startsWith("J_ER") && responseLine.length() > 4){
+                    responseLine = responseLine.substring(5, responseLine.length());
                 System.out.println(responseLine);
-            } else if(responseLine.startsWith("J_OK") && responseLine.length() > 5){
-                responseLine = responseLine.substring(6, responseLine.length());
+            } else if(responseLine.startsWith("J_OK") && responseLine.length() > 4){
+                responseLine = responseLine.substring(5, responseLine.length());
                 System.out.println(responseLine);
             } else if(responseLine.startsWith(" ") || responseLine.startsWith("")){
                 System.out.println(responseLine);
@@ -127,5 +127,5 @@ public class MultiThreadChatClient implements Runnable {
         }
         closed = true;
     }
-    
+
 }

@@ -71,18 +71,18 @@ class ClientThread extends Thread {
                         if (loopThreads(name, userList)) {
                             break;
                         } else {
-                            os.println("J_ER: The name is taken");
+                            os.println("J_ER The name is taken");
                         }
                     }
                     // prints incorrect typed username
                     if (!correctUsername(name)) {
-                        os.println("J_ER: Username needs to be max 12 characters long, only letters, digits, ‘-‘ and ‘_’ allowed");
+                        os.println("J_ER Username needs to be max 12 characters long, only letters, digits, ‘-‘ and ‘_’ allowed");
                     }
-                } else os.println("J_ER: Wrong protocol.\nPlease enter \"JOIN\" \nfollowed by a username to enter the chatroom\n");
+                } else os.println("J_ER Wrong protocol.\nPlease enter \"JOIN\" \nfollowed by a username to enter the chatroom\n");
             }
 
             /* Welcome the new the client. */
-            os.println("J_OK: Welcome " + name + " to our chat room.\n");
+            os.println("J_OK Welcome " + name + " to our chat room.\n");
 
 
             // Only one thread client can be created at a time - this allows everyone to always get a message with all the new clients.
@@ -125,7 +125,7 @@ class ClientThread extends Thread {
                                     }
                                 }
                             }
-                        } else os.println("J_ER: Message too long. Max 250 characters is allowed");
+                        } else os.println("J_ER Message too long. Max 250 characters is allowed");
 
                     } else if (line.startsWith("QUIT")) {
                         deleteFromList(name);
