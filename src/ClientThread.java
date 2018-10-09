@@ -58,8 +58,11 @@ class ClientThread extends Thread {
 
                 if(name.startsWith("JOIN")) {
 
-                    name = name.substring(4, name.length());
+                    name = name.substring(5, name.length());
 
+                    String arr[] = name.split(" ", 2);
+
+                    name = arr[0];
                     name = name.trim();
 
                     // Checks username
@@ -220,7 +223,7 @@ class ClientThread extends Thread {
 
         for(int i = 0; i < userList.size(); i++){
             if(threads[i] != null && threads[i].getClientName() != null) {
-                list = list + threads[i].clientName + "\n";
+                list = list + userList.get(i) + "\n";
             }
         }
 

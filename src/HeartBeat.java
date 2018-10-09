@@ -16,6 +16,7 @@ public class HeartBeat extends Thread {
     }
 
     private void checkClients(){
+
         double currentTime = TimeTCP.setTime();
 
         for (int i = 0; i <threads.length; i++){
