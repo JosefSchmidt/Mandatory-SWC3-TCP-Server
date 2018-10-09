@@ -62,21 +62,21 @@ public class MultiThreadChatClient implements Runnable {
                 break;
             }
 
-
-
                 /*
                  * If everything has been initialized then we want to write some data to the
                  * socket we have opened a connection to on the port portNumber.
                  */
-
-
                 if (clientSocket != null && os != null && sis != null) {
                     try {
                         /* Create a thread to read from the server. */
                         new Thread(new MultiThreadChatClient()).start();
 
                         while (!closed) {
-                            os.println(inputLine.readLine().trim());
+
+                            String line = inputLine.readLine().trim();
+                            if(line.startsWith("DATA") || line.startsWith("IMAV") || line.startsWith("JOIN") || line.startsWith("QUIT")) {
+                                os.println(line);
+                            } else System.out.println("The client doesn't understand the protocol");
                         }
 
                         os.close();
@@ -98,10 +98,34 @@ public class MultiThreadChatClient implements Runnable {
          * Keep on reading from the socket till we receive "Bye" from the
          * server. Once we received that then we want to break.
          */
+
         String responseLine;
-        while ((responseLine = sis.nextLine()) != null) {
-            System.out.println(responseLine);
+        while (sis.hasNextLine()) {
+
+            responseLine = sis.nextLine();
+
+            if(responseLine.startsWith("DATA") && responseLine.length() > 4) {
+                if(responseLine.length() < 250) {
+                    responseLine = responseLine.substring(5, responseLine.length());
+                    System.out.println(responseLine);
+                }
+            } else if(responseLine.startsWith("IMAV") && responseLine.length() > 4){
+                    responseLine = responseLine.substring(5, responseLine.length());
+                System.out.println(responseLine);
+            } else if(responseLine.startsWith("J_ER") && responseLine.length() > 5){
+                    responseLine = responseLine.substring(6, responseLine.length());
+                System.out.println(responseLine);
+            } else if(responseLine.startsWith("J_OK") && responseLine.length() > 5){
+                responseLine = responseLine.substring(6, responseLine.length());
+                System.out.println(responseLine);
+            } else if(responseLine.startsWith(" ") || responseLine.startsWith("")){
+                System.out.println(responseLine);
+            } else {
+                System.out.println("Can't decipher protocol from server ");
+            }
+
         }
         closed = true;
     }
+    
 }

@@ -49,7 +49,7 @@ class ClientThread extends Thread {
              * Get users name (If a names i taken. It is not possible to get that user name).
              */
 
-            os.println("There has been established a connection to the server");
+            os.println("DATA There has been established a connection to the server");
 
             String name;
             while (true) {
@@ -76,13 +76,13 @@ class ClientThread extends Thread {
                     }
                     // prints incorrect typed username
                     if (!correctUsername(name)) {
-                        os.println(StringColor.ANSI_RED+ "J_ER" + StringColor.ANSI_WHITE + ": Username needs to be max 12 characters long, only letters, digits, ‘-‘ and ‘_’ allowed");
+                        os.println("J_ER: Username needs to be max 12 characters long, only letters, digits, ‘-‘ and ‘_’ allowed");
                     }
-                } else os.println(StringColor.ANSI_RED + "J_ER" + StringColor.ANSI_WHITE + ": Wrong protocol.\nPlease enter \"JOIN\" \nfollowed by a username to enter the chatroom\n");
+                } else os.println("J_ER: Wrong protocol.\nPlease enter \"JOIN\" \nfollowed by a username to enter the chatroom\n");
             }
 
             /* Welcome the new the client. */
-            os.println(StringColor.ANSI_GREEN +"\nJ_OK"+ StringColor.ANSI_WHITE + ": Welcome " + name + " to our chat room.");
+            os.println("J_OK: Welcome " + name + " to our chat room.\n");
 
 
             // Only one thread client can be created at a time - this allows everyone to always get a message with all the new clients.
@@ -97,7 +97,7 @@ class ClientThread extends Thread {
                 // Sends a message to all other than the new thread client
                 for (int i = 0; i < maxClientsCount; i++) {
                     if (threads[i] != null && threads[i] != this) {
-                        threads[i].os.println("*** A new user " + name
+                        threads[i].os.println("DATA *** A new user " + name
                                 + " entered the chat room !!! ***");
                     }
                 }
@@ -121,11 +121,11 @@ class ClientThread extends Thread {
                             synchronized (this) {
                                 for (int i = 0; i < maxClientsCount; i++) {
                                     if (threads[i] != null && threads[i].clientName != null) {
-                                        threads[i].os.println("\n" + name + ": " + StringColor.ANSI_PURPLE + line + StringColor.ANSI_WHITE);
+                                        threads[i].os.println("DATA " + name + ": " + line + StringColor.ANSI_WHITE);
                                     }
                                 }
                             }
-                        } else os.println("Message too long. Max 250 characters is allowed");
+                        } else os.println("J_ER: Message too long. Max 250 characters is allowed");
 
                     } else if (line.startsWith("QUIT")) {
                         deleteFromList(name);
@@ -137,13 +137,13 @@ class ClientThread extends Thread {
                             for (int i = 0; i < maxClientsCount; i++) {
                                 if (threads[i] != null && threads[i] == this) {
                                     threads[i].setClientTime(TimeTCP.setTime());
-                                    threads[i].os.println("HeartBeat has been called. You have been given 60 seconds");
+                                    threads[i].os.println("IMAV HeartBeat has been called. You have been given 60 seconds");
                                 }
                             }
                         }
 
                     } else {
-                        os.println("The server doesn't know the protocol. Please type a known protocol\n");
+                        os.println("DATA The server doesn't know the protocol. Please type a known protocol\n");
                     }
                 }
 
@@ -152,8 +152,8 @@ class ClientThread extends Thread {
             synchronized (this) {
                 for (int i = 0; i < maxClientsCount; i++) {
                     if (threads[i] != null && threads[i] != this && threads[i].clientName != null) {
-                        threads[i].os.println(StringColor.ANSI_YELLOW + "*** The user " + name
-                                + " has left the chat room !!! ***" + StringColor.ANSI_WHITE);
+                        threads[i].os.println("DATA *** The user " + name
+                                + " has left the chat room !!! ***");
                     }
                 }
 
@@ -165,7 +165,7 @@ class ClientThread extends Thread {
 
             }
 
-            os.println("*** Bye " + name + " ***");
+            os.println("DATA *** Bye " + name + " ***");
 
             /*
              * Clean up. Set the current thread variable to null so that a new client
@@ -227,7 +227,7 @@ class ClientThread extends Thread {
             }
         }
 
-        list = "\nThe Clients in the server: \n" + StringColor.ANSI_BLUE + list + StringColor.ANSI_WHITE;
+        list = "DATA The Clients in the server: \n" + list;
 
         return list;
     }

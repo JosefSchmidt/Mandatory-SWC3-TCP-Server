@@ -24,7 +24,7 @@ public class HeartBeat extends Thread {
                 if(Math.abs(threads[i].getClientTime()-currentTime) > 1){
                     try {
                         threads[i].deleteFromList(threads[i].getClientName());
-                        threads[i].getOs().println("TCP-connection has been terminated. Session has expired");
+                        threads[i].getOs().println("IMAV TCP-connection has been terminated. Session has expired");
                         threads[i].getClientSocket().close();
 
 

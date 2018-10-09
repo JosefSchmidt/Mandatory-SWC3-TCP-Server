@@ -67,7 +67,7 @@ public class MultiThreadChatServerSync {
                 if (i == maxClientsCount) {
                     // Invokes the PrintStream class
                     PrintStream os = new PrintStream(clientSocket.getOutputStream());
-                    os.println("Server too busy. Try later.");
+                    os.println("DATA Server too busy. Try later.");
                     os.close();
                     clientSocket.close();
                 }
